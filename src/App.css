@@ -1,6 +1,26 @@
+:root {
+  --color-white: #fff;
+  --color-white-dark: #fefefe;
+  --color-white-darkened: #eee;
+
+  --color-brand: #2aa4d4;
+  --color-brand-light: #4fb4db;
+  --color-brand-dark: #1e89b3;
+
+  --color-grey: #333;
+  --color-grey-light: #666;
+
+  --color-transparent: rgba(0, 0, 0, 0.3);
+  --color-transparent-light: rgba(0, 0, 0, 0.1);
+  --color-transparent-dark: rgba(104, 89, 89, 0.5);
+
+  --shadow: 0.2rem 0.2rem 0.5rem 0.005rem var(--color-transparent);
+  --shadow-hover: 0.2rem 0.2rem 0.5rem 0.025rem var(--color-transparent-dark);
+}
+
 .App {
   text-align: center;
-  background-color: white;
+  background-color: var(--color-white-darkened);
   color: #282c34;
   min-height: 100vh;
 }

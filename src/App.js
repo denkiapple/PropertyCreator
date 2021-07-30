@@ -1,21 +1,23 @@
+import { Navigation, PropertyList, EmptyList } from "./Components";
+
 import './App.css';
 
 function App() {
+  const properties = ["uno", "dos"];
+
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Propiedulis</h1>
       </header>
+
+      {properties.length > 1 ? (
+        <PropertyList properties={properties} />
+      ) : (
+        <EmptyList />
+      )}
+
+      <Navigation />
     </div>
   );
 }
