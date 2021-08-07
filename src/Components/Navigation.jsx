@@ -1,15 +1,27 @@
 import React from "react";
 import {
-  Link
+  NavLink
 } from "react-router-dom";
 import styles from "./Navigation.module.css";
 
 const Navigation = ({ props }) => {
   return (
     <div className={styles.layout}>
-      <Link to="/addproperty" className={styles.button}>
+      <NavLink
+        to="/addproperty"
+        className={styles.navLink}
+        activeClassName={styles.navActive}
+      >
         Add
-      </Link>
+      </NavLink>
+
+      <NavLink
+        to="/properties"
+        className={styles.navLink}
+        activeClassName={styles.navActive}
+      >
+        Properties
+      </NavLink>
     </div>
   );
 };

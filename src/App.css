@@ -1,7 +1,7 @@
 :root {
   --color-white: #fff;
   --color-white-dark: #fefefe;
-  --color-white-darkened: #eee;
+  --color-white-very-dark: #eee;
 
   --color-brand: #2aa4d4;
   --color-brand-light: #4fb4db;
@@ -20,7 +20,7 @@
 
 .App {
   text-align: center;
-  background-color: var(--color-white-darkened);
+  background-color: var(--color-white-very-dark);
   color: #282c34;
   min-height: 100vh;
 }
