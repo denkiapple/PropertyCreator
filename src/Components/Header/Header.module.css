@@ -1,0 +1,11 @@
+.layout {
+  margin: 0;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

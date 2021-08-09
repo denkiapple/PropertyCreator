@@ -14,11 +14,12 @@
   align-items: center;
   justify-content: center;
 
-  background-color: var(--white);
+  background-color: var(--color-white);
   border-radius: 0.25rem;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-light);
 
   cursor: pointer;
+  transition: all 600ms;
 }
 
 .card:hover {

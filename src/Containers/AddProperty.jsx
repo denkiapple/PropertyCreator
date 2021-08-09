@@ -1,9 +1,14 @@
 import React from "react";
 import { arrayOf, shape } from "prop-types";
-import { PropertyForm } from "../Components";
+import { Header, PropertyForm } from "../Components";
 
 const PropertiesContainer = () => {
-  return (<PropertyForm />);
+  return (
+    <main>
+      <Header title="Add Property" />
+      <PropertyForm />
+    </main>
+  );
 };
 
 PropertiesContainer.propTypes = {

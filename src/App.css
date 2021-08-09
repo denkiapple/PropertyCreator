@@ -15,6 +15,7 @@
   --color-transparent-dark: rgba(104, 89, 89, 0.5);
 
   --shadow: 0.2rem 0.2rem 0.5rem 0.005rem var(--color-transparent);
+  --shadow-light: 0.2rem 0.2rem 0.5rem 0.001rem var(--color-transparent);
   --shadow-hover: 0.2rem 0.2rem 0.5rem 0.025rem var(--color-transparent-dark);
 }
 

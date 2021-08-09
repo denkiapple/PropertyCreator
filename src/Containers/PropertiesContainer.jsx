@@ -1,14 +1,21 @@
 import React from "react";
 import { arrayOf, shape } from "prop-types";
-import { PropertyList, EmptyList } from "../Components";
+import { Header, PropertyList, EmptyList } from "../Components";
 
 const PropertiesContainer = ({}) => {
   const properties = ["uno", "dos"];
 
-  return properties.length > 1 ? (
-      <PropertyList properties={properties} />
-    ) : (
-      <EmptyList />
+  const handleSearch = () => {};
+
+  return (
+    <main>
+      <Header title="Properties" onSearch={handleSearch} />
+      {properties.length > 1 ? (
+        <PropertyList properties={properties} />
+      ) : (
+        <EmptyList />
+      )}
+    </main>
     );
 };
 
