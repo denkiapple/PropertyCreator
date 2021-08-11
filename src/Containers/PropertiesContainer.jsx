@@ -1,6 +1,7 @@
 import React from "react";
 import { arrayOf, shape } from "prop-types";
-import { Header, PropertyList, EmptyList } from "../Components";
+import { Header, EmptyList } from "../Components";
+import PropertyList from "./PropertyList";
 
 const PropertiesContainer = ({}) => {
   const properties = ["uno", "dos"];

@@ -1,6 +1,7 @@
 import React from "react";
 import { arrayOf, shape } from "prop-types";
-import { Header, PropertyForm } from "../Components";
+import { Header } from "../Components";
+import PropertyForm from "./PropertyForm";
 
 const PropertiesContainer = () => {
   return (
