@@ -8,6 +8,14 @@ const Navigation = ({ props }) => {
   return (
     <div className={styles.layout}>
       <NavLink
+        to="/dashboard"
+        className={styles.navLink}
+        activeClassName={styles.navActive}
+      >
+        Dashboard
+      </NavLink>
+
+      <NavLink
         to="/addproperty"
         className={styles.navLink}
         activeClassName={styles.navActive}

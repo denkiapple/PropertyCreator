@@ -24,9 +24,10 @@
   margin-left: 1rem;
   padding: 1rem;
   
-  color: var(--color-brand);
-  background-color: var(--color-white);
+  color: var(--color-white);
+  background-color: var(--color-brand);
   border: none;
+  font-size: 1.2rem;
   text-decoration: none;
   border-radius: 0.5rem;
   font-weight: bold;
@@ -36,6 +37,10 @@
 }
 
 .navLink:hover {
-  color: var(--color-brand-dark);
-  background-color: var(--color-white-dark);
+  color: var(--color-white-dark);
+  background-color: var(--color-brand-dark);
+}
+
+.navActive {
+  background-color: var(--color-brand-dark);
 }

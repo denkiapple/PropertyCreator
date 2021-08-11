@@ -2,7 +2,8 @@ import { Navigation } from "./Components";
 
 import {
   AddProperty,
-  PropertiesContainer
+  Dashboard,
+  PropertiesContainer,
 } from "./Containers";
 
 import {
@@ -18,6 +19,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/dashboard" render={() => (
+            <Dashboard />
+          )} />
           <Route path="/addproperty" render={() => (
             <AddProperty />
           )} />
