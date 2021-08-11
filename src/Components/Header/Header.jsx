@@ -6,11 +6,13 @@ import styles from "./Header.module.css";
 const Header = ({ title, onSearch }) => {
   return (
     <div className={styles.layout}>
-      <h1>
+      <h1 className={styles.title}>
         {title}
       </h1>
       {onSearch && (
-        <input type="text"></input>
+        <div className={styles.inputContainer}>
+          <input className={styles.input} type="text"></input>
+        </div>
       )}
     </div>
   );
