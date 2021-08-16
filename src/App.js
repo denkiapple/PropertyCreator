@@ -1,6 +1,7 @@
 import { Navigation } from "./Components";
 
 import {
+  About,
   AddProperty,
   Dashboard,
   PropertiesContainer,
@@ -29,9 +30,7 @@ function App() {
             <PropertiesContainer />
           )} />
           <Route path="/about" render={() => (
-            <div>
-              Acerca de
-            </div>
+            <About />
           )} />
         </Switch>
 

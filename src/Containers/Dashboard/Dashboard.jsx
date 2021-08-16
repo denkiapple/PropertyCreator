@@ -1,6 +1,6 @@
 import React from "react";
 import { arrayOf, shape } from "prop-types";
-import { Header } from "../Components";
+import { Header } from "../../Components";
 
 const Dashboard = () => {
   return (
