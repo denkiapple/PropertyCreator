@@ -1,12 +1,21 @@
 import React from "react";
+import { string } from "prop-types";
 import styles from "./EmptyList.module.css";
 
-const EmptyList = () => {
+const EmptyList = ({ message }) => {
   return (
     <div className={styles.layout}>
-      No tienes propiedades, agrega alguna con el botón inferior.
+      {message}
     </div>
   );
+};
+
+EmptyList.propTypes = {
+  message: string,
+};
+
+EmptyList.defaultProps = {
+  message: "You have no items",
 };
 
 export default EmptyList;
