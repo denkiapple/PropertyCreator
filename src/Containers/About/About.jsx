@@ -20,6 +20,13 @@ const About = () => {
           Link to Github pending..
         </p>
       </section>
+
+      <section>
+        <h3>Librerías y herramientas notables</h3>
+        <p>
+          Íconos por <a href="https://fontawesome.com/">Font Awesome</a>
+        </p>
+      </section>
     </main>
   );
 };

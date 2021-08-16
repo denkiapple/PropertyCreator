@@ -8,5 +8,14 @@ export const properties = [
       zipcode: "",
       state: "",
     },
+    price: {
+      askingPrice: 123,
+      currency: "M",
+    },
+    size: {
+      lotSize: 123,
+      constructionSize: 123,
+    },
+    type: "Apartment",
   },
 ];

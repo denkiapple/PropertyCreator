@@ -16,7 +16,11 @@
 }
 
 .navLink {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   width: fit-content;
   height: fit-content;
   
@@ -29,7 +33,7 @@
   border: none;
   font-size: 1.2rem;
   text-decoration: none;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
   font-weight: bold;
 
   cursor: pointer;
@@ -43,4 +47,22 @@
 
 .navActive {
   background-color: var(--color-brand-dark);
+}
+
+.navLabel {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .navLink {
+    flex-direction: row;
+  }
+
+  .navIcon {
+    margin-left: 1rem;
+  }
+
+  .navLabel {
+    display: block;
+  }
 }
