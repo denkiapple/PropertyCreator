@@ -3,6 +3,10 @@
   --color-white-dark: #fefefe;
   --color-white-very-dark: #eee;
 
+  --color-danger: #a03434;
+  --color-danger-light: #c25353;
+  --color-danger-dark: #7e2727;
+
   --color-brand: #2aa4d4;
   --color-brand-light: #4fb4db;
   --color-brand-dark: #1e89b3;
@@ -35,10 +39,12 @@
 main {
   margin: 0;
   padding: 0 1rem;
+  padding-bottom: 6rem;
 }
 
 @media only screen and (min-width: 600px) {
   main {
     padding: 0 3rem;
+    padding-bottom: 6rem;
   }
 }
