@@ -18,20 +18,32 @@ export const PROPERTY_TYPES = [
 export const properties = [
   {
     id: 1,
+    type: 1,
     address: {
       street: "",
       extNumber: "",
       intNumber: "",
       zipcode: "",
+      city: "",
       state: "",
+    },
+    areas: {
+      lotSize: 0,
+      constructionSize: 0,
+      sharedSpaces: 0,
+    },
+    characteristics: {
+      rooms: 0,
+      bathrooms: 0,
+      parkingSpaces: 0,
+    },
+    amenities: {
+      petsAllowed: false,
+      includesMaintenance: false,
     },
     price: {
       askingPrice: 123,
       currency: "M",
-    },
-    size: {
-      lotSize: 123,
-      constructionSize: 123,
     },
     type: "Apartment",
   },
