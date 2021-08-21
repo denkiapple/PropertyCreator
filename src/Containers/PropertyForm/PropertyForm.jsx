@@ -1,5 +1,7 @@
 import React from "react";
-import { Grid } from "../Components";
+import { Grid, Toggle, NumberInput } from "../../Components";
+
+import { PROPERTY_TYPES } from "../../constants";
 
 import styles from "./PropertyForm.module.css";
 
@@ -8,10 +10,11 @@ const PropertyForm = ({ props }) => {
     <div className={styles.layout}>
       <section>
         <h3>Type</h3>
+        <Toggle options={PROPERTY_TYPES} />
       </section>
 
       <section>
-        <h3>Location</h3>
+        <h3>Address</h3>
         <Grid>
           <div className={styles.inputContainer}>
             <label className={styles.label}>Zip code</label>
@@ -19,12 +22,27 @@ const PropertyForm = ({ props }) => {
           </div>
 
           <div className={styles.inputContainer}>
-            <label className={styles.label}>Street name</label>
+            <label className={styles.label}>Street</label>
             <input className={styles.input} type="text"></input>
           </div>
 
           <div className={styles.inputContainer}>
-            <label className={styles.label}>Number (ext)</label>
+            <label className={styles.label}>Number (exterior)</label>
+            <input className={styles.input} type="text"></input>
+          </div>
+
+          <div className={styles.inputContainer}>
+            <label className={styles.label}>Number (interior)</label>
+            <input className={styles.input} type="text"></input>
+          </div>
+
+          <div className={styles.inputContainer}>
+            <label className={styles.label}>City</label>
+            <input className={styles.input} type="text"></input>
+          </div>
+
+          <div className={styles.inputContainer}>
+            <label className={styles.label}>State</label>
             <input className={styles.input} type="text"></input>
           </div>
         </Grid>
@@ -53,20 +71,24 @@ const PropertyForm = ({ props }) => {
       <section>
         <h3>Characteristics</h3>
         <Grid>
+          <NumberInput title="Rooms" />
+          <NumberInput title="Bathrooms" />        
+          <NumberInput title="Parking spaces" />
+        </Grid>
+      </section>
+
+      <section>
+        <h3>Amenities</h3>
+        <Grid>
           <div className={styles.inputContainer}>
-            <label className={styles.label}>Rooms</label>
+            <label className={styles.label}>Pets allowed</label>
             <input className={styles.input} type="text"></input>
           </div>
 
           <div className={styles.inputContainer}>
-            <label className={styles.label}>Bathrooms</label>
+            <label className={styles.label}>Includes mainteinance</label>
             <input className={styles.input} type="text"></input>
-          </div>
-
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Parking spaces</label>
-            <input className={styles.input} type="text"></input>
-          </div>
+          </div>          
         </Grid>
       </section>
     </div>
