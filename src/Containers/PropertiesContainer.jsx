@@ -10,7 +10,7 @@ const PropertiesContainer = ({}) => {
   return (
     <main>
       <Header title="Properties" onSearch={handleSearch} />
-      {properties.length > 1 ? (
+      {properties.length >= 1 ? (
         <PropertyList properties={properties} />
       ) : (
         <EmptyList message="You have no properties, ¡try adding some!" />
