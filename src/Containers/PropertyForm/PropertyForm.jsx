@@ -1,16 +1,38 @@
 import React from "react";
-import { Grid, Toggle, NumberInput } from "../../Components";
+import { Grid, Select, Toggle, NumberInput } from "../../Components";
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faBuilding,
+  faHome,
+
+  faTree,
+  faCity,
+  faSwimmingPool,
+} from '@fortawesome/free-solid-svg-icons'
+
 
 import { PROPERTY_TYPES } from "../../constants";
 
 import styles from "./PropertyForm.module.css";
 
 const PropertyForm = ({ props }) => {
+  const propertyOptions = PROPERTY_TYPES
+    .map(pt => ({
+      ...pt,
+      icon: pt.id === 1 ? (
+        <FontAwesomeIcon icon={faHome} className={styles.navIcon} />
+        ) : (
+        <FontAwesomeIcon icon={faBuilding} className={styles.navIcon} />
+      ),
+    }));
+
   return (
     <div className={styles.layout}>
       <section>
         <h3>Type</h3>
-        <Toggle options={PROPERTY_TYPES} />
+        <Select options={propertyOptions} />
       </section>
 
       <section>
@@ -80,16 +102,15 @@ const PropertyForm = ({ props }) => {
       <section>
         <h3>Amenities</h3>
         <Grid>
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Pets allowed</label>
-            <input className={styles.input} type="text"></input>
-          </div>
-
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Includes mainteinance</label>
-            <input className={styles.input} type="text"></input>
-          </div>          
+          <Toggle text="Pets allowed" />
+          <Toggle text="Includes mainteinance" />
         </Grid>
+      </section>
+
+      <section>
+        <button className={styles.submitBtn} >
+          Create
+        </button>
       </section>
     </div>
   );

@@ -45,31 +45,42 @@ const Card = ({ property }) => {
 
       <div className={styles.charsContainer}>
         <div>
-          {constructionSize}mt<sup>2</sup>
+          {type === 1 ? (
+            <FontAwesomeIcon icon={faBuilding} className={styles.searchIcon} />
+          ) : (
+            <FontAwesomeIcon icon={faHome} className={styles.searchIcon} />
+          )}
         </div>
         <div>
-          <FontAwesomeIcon icon={faBuilding} className={styles.searchIcon} />
-          <FontAwesomeIcon icon={faHome} className={styles.searchIcon} />
-          {type}
+          {constructionSize}mt<sup>2</sup>
         </div>
       </div>
 
       <div className={styles.charsContainer}>
-        <div><FontAwesomeIcon icon={faBed} className={styles.searchIcon} />
-          {rooms}
+        <div>
+          <FontAwesomeIcon icon={faBed} className={styles.searchIcon} />
+          <span className={styles.info}>
+            {rooms}
+          </span>
         </div>
         <div>
           <FontAwesomeIcon icon={faToilet} className={styles.searchIcon} />
-          {bathrooms}
+          <span className={styles.info}>
+            {bathrooms}
+          </span>
         </div>
         <div>
           <FontAwesomeIcon icon={faCarSide} className={styles.searchIcon} />
-          {parkingSpaces}
+          <span className={styles.info}>
+            {parkingSpaces}
+          </span>
         </div>
-        <div>
-          <FontAwesomeIcon icon={faDog} className={styles.searchIcon} />
-          {petsAllowed}
-        </div>
+
+        {petsAllowed && (
+          <div>
+            <FontAwesomeIcon icon={faDog} className={styles.searchIcon} />
+          </div>
+        )}
       </div>
     </div>
   );

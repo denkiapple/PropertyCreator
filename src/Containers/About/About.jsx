@@ -13,9 +13,6 @@ const About = () => {
         <p>
           This app was created using the Create-React-App tool, npm, webapack, and of course React.
         </p>
-        <p>
-          Developed in 2021 by Ulises Torner Campuzano
-        </p>
       </section>
 
       <section>
@@ -31,6 +28,12 @@ const About = () => {
         <p>
           <FontAwesomeIcon icon={faIcons} />
           Íconos por <a href="https://fontawesome.com/">Font Awesome</a>
+        </p>
+      </section>
+
+      <section>
+        <p>
+          Developed in 2021 by Ulises Torner Campuzano
         </p>
       </section>
     </main>

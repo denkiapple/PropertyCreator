@@ -1,34 +1,29 @@
 .layout {
   margin: 0;
   padding: 1rem;
+  min-height: 4rem;
+
   background-color: var(--color-white);
   border-radius: 0.8rem;
   box-shadow: var(--shadow);
-}
-
-.card {
-  min-height: 4rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background-color: var(--color-white);
-  border-radius: 0.25rem;
-  box-shadow: var(--shadow-light);
 
   cursor: pointer;
   transition: all 600ms;
 }
 
-.card:hover {
+.layout:hover {
   box-shadow: var(--shadow-hover);
 }
 
 .charsContainer {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  font-size: 1.2rem;
+}
+
+.info {
+  margin-left: 0.8rem;
 }
