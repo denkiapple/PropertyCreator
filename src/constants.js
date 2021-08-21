@@ -9,6 +9,10 @@ export const PROPERTY_TYPES = [
     id: 2,
     name: "Apartment",
   },
+  {
+    id: 3,
+    name: "Developments",
+  },
 ];
 
 export const properties = [

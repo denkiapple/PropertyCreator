@@ -6,9 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBuilding,
   faHome,
+  faCity,
+  faQuestion,
 
   faTree,
-  faCity,
   faSwimmingPool,
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -18,21 +19,30 @@ import { PROPERTY_TYPES } from "../../constants";
 import styles from "./PropertyForm.module.css";
 
 const PropertyForm = ({ props }) => {
+  const iconSelector = id => {
+    switch(id) {
+      case 1:
+        return <FontAwesomeIcon icon={faHome} className={styles.navIcon} />;
+      case 2:
+        return <FontAwesomeIcon icon={faBuilding} className={styles.navIcon} />;
+      case 3:
+        return <FontAwesomeIcon icon={faCity} className={styles.navIcon} />;
+      default:
+        return <FontAwesomeIcon icon={faQuestion} className={styles.navIcon} />;
+    }
+  };
+
   const propertyOptions = PROPERTY_TYPES
     .map(pt => ({
       ...pt,
-      icon: pt.id === 1 ? (
-        <FontAwesomeIcon icon={faHome} className={styles.navIcon} />
-        ) : (
-        <FontAwesomeIcon icon={faBuilding} className={styles.navIcon} />
-      ),
+      icon: iconSelector(pt.id),
     }));
 
   return (
     <div className={styles.layout}>
       <section>
         <h3>Type</h3>
-        <Select options={propertyOptions} />
+        <Select options={propertyOptions} initialSelected={1} />
       </section>
 
       <section>
