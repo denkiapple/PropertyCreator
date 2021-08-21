@@ -1,6 +1,9 @@
 import React from "react";
 import { string, oneOfType, func } from "prop-types";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
 import styles from "./Header.module.css";
 
 const Header = ({ title, onSearch }) => {
@@ -11,7 +14,8 @@ const Header = ({ title, onSearch }) => {
       </h1>
       {onSearch && (
         <div className={styles.inputContainer}>
-          <input className={styles.input} type="text"></input>
+          <input className={styles.input} type="text" />
+          <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
         </div>
       )}
     </div>
