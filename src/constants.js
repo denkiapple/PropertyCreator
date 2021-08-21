@@ -9,10 +9,6 @@ export const PROPERTY_TYPES = [
     id: 2,
     name: "Apartment",
   },
-  {
-    id: 3,
-    name: "Lot",
-  },
 ];
 
 export const properties = [
@@ -20,31 +16,30 @@ export const properties = [
     id: 1,
     type: 1,
     address: {
-      street: "",
-      extNumber: "",
-      intNumber: "",
-      zipcode: "",
-      city: "",
-      state: "",
+      street: "Baker Street",
+      extNumber: "221B",
+      intNumber: "2",
+      zipcode: "NW1",
+      city: "London",
+      state: "United Kingdom",
     },
     areas: {
-      lotSize: 0,
-      constructionSize: 0,
-      sharedSpaces: 0,
+      lotSize: 210,
+      constructionSize: 120,
+      sharedSpaces: 20,
     },
     characteristics: {
-      rooms: 0,
-      bathrooms: 0,
-      parkingSpaces: 0,
+      rooms: 3,
+      bathrooms: 2,
+      parkingSpaces: 1,
     },
     amenities: {
-      petsAllowed: false,
+      petsAllowed: true,
       includesMaintenance: false,
     },
     price: {
-      askingPrice: 123,
-      currency: "M",
+      askingPrice: 4000,
+      currency: "GBP",
     },
-    type: "Apartment",
   },
 ];
