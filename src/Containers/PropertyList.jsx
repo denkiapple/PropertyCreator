@@ -1,19 +1,20 @@
 import React from "react";
 import { arrayOf, shape } from "prop-types";
 
-import styles from "./PropertyList.module.css";
+import { Card, Grid } from "../Components";
 
 const PropertyList = ({ properties }) => {
   const list = properties.map(property => (
-    <div className={styles.card}>
-      {property}
-    </div>
+    <Card
+      key={property.id}
+      property={property}
+    />
   ));
 
   return (
-    <div className={styles.layout}>
+    <Grid>
       {list}
-    </div>
+    </Grid>
   );
 };
 
