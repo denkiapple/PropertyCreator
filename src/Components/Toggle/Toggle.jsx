@@ -1,42 +1,39 @@
 import React, { useState } from "react";
-import { arrayOf, shape } from "prop-types";
+import { string, bool } from "prop-types";
 import { classes } from "../../constants";
 
 import styles from "./Toggle.module.css";
 
-const Toggle = ({ options, initialSelected }) => {
-  const [selected, setSelected] = useState(initialSelected || options[0].id);
+const Toggle = ({ text, initiallyOn }) => {
+  const [selected, setSelected] = useState(initiallyOn);
 
-  return options.length > 1 ? (
+  return (
     <div className={styles.layout}>
-      {options.map(option => (
-        <button
-          key={option.id}
-          className={classes(
-            styles.option,
-            selected === option.id && styles.optionSelected
-          )}
-          // onClick={setSelected(option.id)}
-        >
-          {option.name}
-        </button>
-      ))}
-    </div>
-  ) : (
-    <div className={styles.layout}>
-      <p className={styles.error}>
-        Toggle_Error: Ingresa más de dos opciones
+      <p>
+        {text}
       </p>
+      
+      <button
+        className={classes(
+          styles.toggler,
+          selected && styles.optionSelected
+        )}
+        onClick={() => setSelected(!selected)}
+      >
+        <div className={styles.bolis}></div>
+      </button>
     </div>
   );
 };
 
 Toggle.propTypes = {
-  options: arrayOf(shape({})),
+  text: string,
+  initiallyOn: bool,
 };
 
 Toggle.defaultProps = {
-  options: [],
+  text: "Placehoder",
+  initiallyOn: false,
 };
 
 export default Toggle;
