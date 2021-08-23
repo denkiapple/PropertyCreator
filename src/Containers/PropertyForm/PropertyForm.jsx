@@ -1,6 +1,11 @@
 import React from "react";
-import { Grid, Select, Toggle, NumberInput } from "../../Components";
-
+import {
+  Grid,
+  Select,
+  MetersInput,
+  NumberInput,
+  Toggle,
+} from "../../Components";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -13,12 +18,15 @@ import {
   faSwimmingPool,
 } from '@fortawesome/free-solid-svg-icons'
 
-
 import { PROPERTY_TYPES } from "../../constants";
 
 import styles from "./PropertyForm.module.css";
 
 const PropertyForm = ({ props }) => {
+  const lotIcon = <FontAwesomeIcon icon={faTree} className={styles.navIcon} />;
+  const commonIcon = <FontAwesomeIcon icon={faSwimmingPool} className={styles.navIcon} />;
+  const buildIcon = <FontAwesomeIcon icon={faBuilding} className={styles.navIcon} />;
+
   const iconSelector = id => {
     switch(id) {
       case 1:
@@ -84,18 +92,15 @@ const PropertyForm = ({ props }) => {
         <h3>Areas</h3>
         <Grid>
           <div className={styles.inputContainer}>
-            <label className={styles.label}>Lot size</label>
-            <input className={styles.input} type="text"></input>
+            <MetersInput title="Lot size" icon={lotIcon} />
           </div>
 
           <div className={styles.inputContainer}>
-            <label className={styles.label}>Construction size</label>
-            <input className={styles.input} type="text"></input>
+            <MetersInput title="Construction size" icon={buildIcon} />
           </div>
 
           <div className={styles.inputContainer}>
-            <label className={styles.label}>Shared spaces</label>
-            <input className={styles.input} type="text"></input>
+            <MetersInput title="Shared spaces" icon={commonIcon} />
           </div>
         </Grid>
       </section>
