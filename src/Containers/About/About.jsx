@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "../../Components";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIcons, faCodeBranch } from '@fortawesome/free-solid-svg-icons'
+import { faIcons, faCodeBranch, faClipboardCheck } from '@fortawesome/free-solid-svg-icons'
 
 const About = () => {
   return (
@@ -19,15 +19,25 @@ const About = () => {
         <h3>Get the code</h3>
         <p>
           <FontAwesomeIcon icon={faCodeBranch} />
-          Link to Github pending...
+          <a href="https://github.com/denkiapple/PropertyCreator" alt="github repository link">
+            Link to Github
+          </a>
         </p>
       </section>
 
       <section>
-        <h3>Librerías y herramientas notables</h3>
+        <h3>Libraries and used tools</h3>
         <p>
           <FontAwesomeIcon icon={faIcons} />
-          Íconos por <a href="https://fontawesome.com/">Font Awesome</a>
+          Icons by <a href="https://fontawesome.com/" alt="font awesome link">Font Awesome</a>
+        </p>
+
+        <p>
+          <FontAwesomeIcon icon={faClipboardCheck} />
+          Unit Testing by <a 
+            href="https://testing-library.com/docs/react-testing-library/intro"
+            alt="React testing library link"
+          >React-Testing-Library</a>
         </p>
       </section>
 

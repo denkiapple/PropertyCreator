@@ -11,7 +11,7 @@ export const PROPERTY_TYPES = [
   },
   {
     id: 3,
-    name: "Developments",
+    name: "Development",
   },
 ];
 
