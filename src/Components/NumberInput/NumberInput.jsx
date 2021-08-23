@@ -28,7 +28,7 @@ const NumberInput = ({ title, value, onChange }) => {
         <button className={styles.leftBtn} onClick={decrement}>
           <FontAwesomeIcon icon={faMinus} className={styles.navIcon} />
         </button>
-        <span className={styles.value}>{value || 0}</span>
+        <span className={styles.value}>{value}</span>
         <button className={styles.rightBtn} onClick={increment}>
           <FontAwesomeIcon icon={faPlus} className={styles.navIcon} />
         </button>

@@ -10,6 +10,19 @@
   --color-brand: #2aa4d4;
   --color-brand-light: #4fb4db;
   --color-brand-dark: #1e89b3;
+  --gradient-brand: radial-gradient(circle, rgba(30,137,179,1) 15%, rgba(79,180,219,1) 89%);
+
+  --color-cyan: #54b8b3;
+  --color-cyan-light: #7bdbd6;
+  --color-cyan-dark: #328a85;
+
+  --color-green: #4dc451;
+  --color-green-light: #85de88;
+  --color-green-dark: #348037;
+
+  --color-purple: #a154ba;
+  --color-purple-light: #c987de;
+  --color-purple-dark: #6c3080;
 
   --color-grey: #333;
   --color-grey-light: #666;
@@ -40,6 +53,18 @@ main {
   margin: 0;
   padding: 0 1rem;
   padding-bottom: 6rem;
+}
+
+/* REMOVES NUMBER INPUT ARROWS */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 @media only screen and (min-width: 600px) {

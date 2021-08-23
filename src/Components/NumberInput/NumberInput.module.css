@@ -4,10 +4,14 @@
   align-items: center;
   justify-content: center;
 
-  background-color: var(--color-brand);
+  background-color: var(--color-brand-light);
   padding: 0.8rem;
   border-radius: 0.5rem;
   color: var(--color-white);
+}
+
+.layout:hover {
+  background-color: var(--color-brand);
 }
 
 .title {
@@ -15,6 +19,7 @@
   margin: 0;
   padding: 0;
   text-align: left;
+  font-weight: bold;
 }
 
 .container {
