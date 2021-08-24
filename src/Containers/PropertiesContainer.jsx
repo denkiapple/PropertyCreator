@@ -1,17 +1,25 @@
 import React from "react";
 import { arrayOf, shape } from "prop-types";
-import { Header, EmptyList } from "../Components";
-import PropertyList from "./PropertyList";
+import { Header, EmptyList, Card, Grid } from "../Components";
 import { properties } from "../constants";
 
 const PropertiesContainer = ({}) => {
   const handleSearch = () => {};
 
+  const list = properties.map(property => (
+    <Card
+      key={property.id}
+      property={property}
+    />
+  ));
+
   return (
     <main>
       <Header title="Properties" onSearch={handleSearch} />
       {properties.length >= 1 ? (
-        <PropertyList properties={properties} />
+        <Grid>
+          {list}
+        </Grid>
       ) : (
         <EmptyList message="You have no properties, ¡try adding some!" />
       )}

@@ -3,7 +3,7 @@ import { arrayOf, shape } from "prop-types";
 import { Header } from "../Components";
 import PropertyForm from "./PropertyForm/PropertyForm";
 
-const PropertiesContainer = () => {
+const AddPropertyContainer = () => {
   return (
     <main>
       <Header title="Add Property" />
@@ -12,10 +12,10 @@ const PropertiesContainer = () => {
   );
 };
 
-PropertiesContainer.propTypes = {
+AddPropertyContainer.propTypes = {
 };
 
-PropertiesContainer.defaultProps = {
+AddPropertyContainer.defaultProps = {
 };
 
-export default PropertiesContainer;
+export default AddPropertyContainer;

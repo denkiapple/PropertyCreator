@@ -2,7 +2,7 @@ import { Navigation } from "./Components";
 
 import {
   About,
-  AddProperty,
+  AddPropertyContainer,
   Dashboard,
   PropertiesContainer,
 } from "./Containers";
@@ -24,7 +24,7 @@ function App() {
             <Dashboard />
           )} />
           <Route path="/addproperty" render={() => (
-            <AddProperty />
+            <AddPropertyContainer />
           )} />
           <Route path="/properties" render={() => (
             <PropertiesContainer />
