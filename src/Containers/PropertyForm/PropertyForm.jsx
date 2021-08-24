@@ -1,4 +1,6 @@
 import React from "react";
+import { Formik, Form, Field } from "formik";
+
 import {
   Grid,
   Select,
@@ -46,88 +48,118 @@ const PropertyForm = ({ props }) => {
       icon: iconSelector(pt.id),
     }));
 
+  const handlePropertyCreation = values => {
+    console.log(values);
+  };
+
   return (
-    <div className={styles.layout}>
-      <section>
-        <h3>Type</h3>
-        <Select options={propertyOptions} initialSelected={1} />
-      </section>
+    <Formik
+      className={styles.layout}
+      onSubmit={handlePropertyCreation}
+      render={() => (
+        <Form>
+          <section>
+            <h3>Type</h3>
+            <Field
+              component={Select}
+              name="type"
+              options={propertyOptions}
+              initialSelected={1}
+            />
+          </section>
+  
+          <section>
+            <h3>Address</h3>
+            <Grid>
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>Zip code</label>
+                <input className={styles.input} type="text" name="zipCode"></input>
+              </div>
+  
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>Street</label>
+                <input className={styles.input} type="text" name="street"></input>
+              </div>
+  
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>Number (exterior)</label>
+                <input className={styles.input} type="text" name="extNumber"></input>
+              </div>
+  
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>Number (interior)</label>
+                <input className={styles.input} type="text" name="intNumber"></input>
+              </div>
+  
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>City</label>
+                <input className={styles.input} type="text" name="city"></input>
+              </div>
+  
+              <div className={styles.inputContainer}>
+                <label className={styles.label}>State</label>
+                <input className={styles.input} type="text" name="state"></input>
+              </div>
+            </Grid>
+          </section>
+  
+          <section>
+            <h3>Areas</h3>
+            <Grid>
+              <div className={styles.inputContainer}>
+                <Field
+                  name="lotSize"
+                  component={MetersInput}
+                  title="Lot size"
+                  icon={lotIcon}
+                />
+              </div>
+  
+              <div className={styles.inputContainer}>
+                <Field
+                  name="constructionSize"
+                  component={MetersInput}
+                  title="Construction size"
+                  icon={buildIcon}
+                />
+              </div>
+  
+              <div className={styles.inputContainer}>
+                <Field
+                  name="shaeredSize"
+                  component={MetersInput}
+                  title="Shared spaces"
+                  icon={commonIcon}
+                />
+              </div>
+            </Grid>
+          </section>
+  
+          <section>
+            <h3>Characteristics</h3>
+            <Grid>
+              <Field name="rooms" component={NumberInput} title="Rooms" />
+              <Field name="bathrooms" component={NumberInput} title="Bathrooms" />        
+              <Field name="parking" component={NumberInput} title="Parking spaces" />
+            </Grid>
+          </section>
 
-      <section>
-        <h3>Address</h3>
-        <Grid>
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Zip code</label>
-            <input className={styles.input} type="text"></input>
-          </div>
-
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Street</label>
-            <input className={styles.input} type="text"></input>
-          </div>
-
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Number (exterior)</label>
-            <input className={styles.input} type="text"></input>
-          </div>
-
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>Number (interior)</label>
-            <input className={styles.input} type="text"></input>
-          </div>
-
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>City</label>
-            <input className={styles.input} type="text"></input>
-          </div>
-
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>State</label>
-            <input className={styles.input} type="text"></input>
-          </div>
-        </Grid>
-      </section>
-
-      <section>
-        <h3>Areas</h3>
-        <Grid>
-          <div className={styles.inputContainer}>
-            <MetersInput title="Lot size" icon={lotIcon} />
-          </div>
-
-          <div className={styles.inputContainer}>
-            <MetersInput title="Construction size" icon={buildIcon} />
-          </div>
-
-          <div className={styles.inputContainer}>
-            <MetersInput title="Shared spaces" icon={commonIcon} />
-          </div>
-        </Grid>
-      </section>
-
-      <section>
-        <h3>Characteristics</h3>
-        <Grid>
-          <NumberInput title="Rooms" />
-          <NumberInput title="Bathrooms" />        
-          <NumberInput title="Parking spaces" />
-        </Grid>
-      </section>
-
-      <section>
-        <h3>Amenities</h3>
-        <Grid>
-          <Toggle text="Pets allowed" />
-          <Toggle text="Includes mainteinance" />
-        </Grid>
-      </section>
-
-      <section>
-        <button className={styles.submitBtn} >
-          Create
-        </button>
-      </section>
-    </div>
+          <section>
+            <h3>Amenities</h3>
+            <Grid>
+              <Field name="pets" component={Toggle} text="Pets allowed" />
+              <Field name="maintenance" component={Toggle} text="Includes mainteinance" />
+            </Grid>
+          </section>
+  
+          <section>
+            <button className={styles.submitBtn} >
+              Create
+            </button>
+          </section>
+        </Form>
+      )}
+    />
   );
 };
 
