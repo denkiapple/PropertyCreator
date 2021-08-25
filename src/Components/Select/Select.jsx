@@ -4,19 +4,25 @@ import { classes } from "../../constants";
 
 import styles from "./Select.module.css";
 
-const Select = ({ options, initialSelected }) => {
-  const [selected, setSelected] = useState(initialSelected !== undefined ? initialSelected : options[0].id);
+const Select = ({ options, initialSelected, field }) => {
+  const initVal = initialSelected !== undefined ? initialSelected : options[0].id;
+  const [selected, setSelected] = useState(initVal);
 
   return options.length > 1 ? (
-    <div className={styles.layout}>
+    <div className={styles.layout} data-testid="fullLayout">
       {options.map(option => (
         <button
           key={option.id}
+          type="button"
           className={classes(
             styles.option,
             selected === option.id && styles.optionSelected
           )}
-          onClick={() => setSelected(option.id)}
+          onClick={() => {
+            const event = { target: { value: option.id } }
+            field?.onChange(event);
+            setSelected(option.id);
+          }}
         >
           {option.icon && (
             <div className={styles.iconContainer}>
@@ -28,7 +34,7 @@ const Select = ({ options, initialSelected }) => {
       ))}
     </div>
   ) : (
-    <div className={styles.layout}>
+    <div className={styles.layout} data-testid="emptyLayout">
       <p className={styles.error}>
         Select_Error: Ingresa más de dos opciones
       </p>
@@ -39,11 +45,15 @@ const Select = ({ options, initialSelected }) => {
 Select.propTypes = {
   options: arrayOf(shape({})),
   initialSelected: number,
+  field: shape({}),
 };
 
 Select.defaultProps = {
   options: [],
   initialSelected: 0,
+  field: {
+    onChange: () => {},
+  }
 };
 
 export default Select;
