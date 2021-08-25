@@ -1,5 +1,5 @@
 import React from "react";
-import { func, number, string } from "prop-types";
+import { shape, string } from "prop-types";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -9,27 +9,36 @@ import {
 
 import styles from "./NumberInput.module.css";
 
-const NumberInput = ({ title, value, onChange }) => {
-  const increment = () => {
-    onChange(value + 1);
+const NumberInput = ({ title, field }) => {
+  const handleChange = value => {
+    const event = {
+      target: {
+        value,
+        name: field.name,
+      }
+    };
+    field?.onChange(event);
   };
 
-  const decrement = () => {
-    onChange(value - 1);
-  };
+  const increment = () => field?.value < 99 && handleChange(field?.value + 1);
+  const decrement = () => field?.value > 0 && handleChange(field?.value - 1);
 
   return (
     <div className={styles.layout}>
-      <p className={styles.title}>
+      <p className={styles.title} data-testid="title">
         {title}
       </p>
 
       <div className={styles.container}>
-        <button className={styles.leftBtn} onClick={decrement}>
+        <button className={styles.leftBtn} onClick={decrement} data-testid="sbsBtn" type="button">
           <FontAwesomeIcon icon={faMinus} className={styles.navIcon} />
         </button>
-        <span className={styles.value}>{value}</span>
-        <button className={styles.rightBtn} onClick={increment}>
+
+        <span className={styles.value} data-testid="value">
+          {field?.value}
+        </span>
+
+        <button className={styles.rightBtn} onClick={increment} data-testid="addBtn" type="button">
           <FontAwesomeIcon icon={faPlus} className={styles.navIcon} />
         </button>
       </div>
@@ -39,14 +48,16 @@ const NumberInput = ({ title, value, onChange }) => {
 
 NumberInput.propTypes = {
   title: string,
-  value: number,
-  onChange: func,
+  field: shape({}),
 };
 
 NumberInput.defaultProps = {
   title: "Number Input",
-  value: 0,
-  onChange: () => {},
+  field: {
+    name: "",
+    value: 0,
+    onChange: () => {},
+  },
 };
 
 export default NumberInput;

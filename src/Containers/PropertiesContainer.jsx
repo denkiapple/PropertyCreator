@@ -1,9 +1,8 @@
 import React from "react";
-import { arrayOf, shape } from "prop-types";
 import { Header, EmptyList, Card, Grid } from "../Components";
 import { properties } from "../constants";
 
-const PropertiesContainer = ({}) => {
+const PropertiesContainer = () => {
   const handleSearch = () => {};
 
   const list = properties.map(property => (
@@ -25,12 +24,6 @@ const PropertiesContainer = ({}) => {
       )}
     </main>
     );
-};
-
-PropertiesContainer.propTypes = {
-};
-
-PropertiesContainer.defaultProps = {
 };
 
 export default PropertiesContainer;

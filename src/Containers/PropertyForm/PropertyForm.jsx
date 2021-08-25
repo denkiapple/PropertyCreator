@@ -56,7 +56,13 @@ const PropertyForm = ({ props }) => {
     <Formik
       className={styles.layout}
       onSubmit={handlePropertyCreation}
-      render={() => (
+      initialValues={{
+        rooms: 0,
+        bathrooms: 0,
+        parking: 0,
+      }}
+    >
+      {() => (
         <Form>
           <section>
             <h3>Type</h3>
@@ -159,7 +165,7 @@ const PropertyForm = ({ props }) => {
           </section>
         </Form>
       )}
-    />
+    </Formik>
   );
 };
 
