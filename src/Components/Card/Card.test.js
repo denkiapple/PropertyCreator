@@ -8,5 +8,5 @@ test("Card renders correctly", () => {
     const component = render(<Card />);
     const headerEl = component.getByTestId("header");
 
-    expect(headerEl).toBe("0 Street");
+    expect(headerEl.textContent).toBe("0 Street");
 });

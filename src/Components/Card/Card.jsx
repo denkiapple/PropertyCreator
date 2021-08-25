@@ -1,11 +1,11 @@
 import React from "react";
 import { shape } from "prop-types";
-import { PROPERTY_TYPES } from "../../constants";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBuilding,
   faHome,
+  faCity,
   faDog,
   faToilet,
   faBed,
@@ -17,25 +17,35 @@ import styles from "./Card.module.css";
 
 const Card = ({ property }) => {
   const {
-    type = 0,
+    type,
     address: {
-      street = "Street",
-      extNumber = 0,
+      street,
+      extNumber,
     },
     areas: {
-      constructionSize = 0,
+      constructionSize,
     },
     characteristics: {
-      rooms = 0,
-      bathrooms = 0,
-      parkingSpaces = 0,
+      rooms,
+      bathrooms,
+      parkingSpaces,
     },
     amenities: {
-      petsAllowed = false,
+      petsAllowed,
     },
   } = property;
 
   const addressTitle = `${extNumber} ${street}`;
+  const propertyIcon = () => {
+    switch(type) {
+      case 1:
+        return <FontAwesomeIcon icon={faBuilding} className={styles.searchIcon} />;
+      case 2:
+        return <FontAwesomeIcon icon={faHome} className={styles.searchIcon} />;
+      default:
+        return <FontAwesomeIcon icon={faCity} className={styles.searchIcon} />;
+    }
+  };
 
   return (
     <div className={styles.layout}>
@@ -45,11 +55,7 @@ const Card = ({ property }) => {
 
       <div className={styles.charsContainer}>
         <div>
-          {type === 1 ? (
-            <FontAwesomeIcon icon={faBuilding} className={styles.searchIcon} />
-          ) : (
-            <FontAwesomeIcon icon={faHome} className={styles.searchIcon} />
-          )}
+          {propertyIcon()}
         </div>
         <div>
           {constructionSize}mt<sup>2</sup>
@@ -91,7 +97,24 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  property: {},
+  property: {
+    type: 0,
+    address: {
+      street: "Street",
+      extNumber: 0,
+    },
+    areas: {
+      constructionSize: 0,
+    },
+    characteristics: {
+      rooms: 0,
+      bathrooms: 0,
+      parkingSpaces: 0,
+    },
+    amenities: {
+      petsAllowed: false,
+    },
+  },
 };
 
 export default Card;
