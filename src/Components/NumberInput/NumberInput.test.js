@@ -28,17 +28,21 @@ test('Decrements and Increments number input', () => {
   const { getByTestId } = render(<Wrapper />);
   const value = getByTestId("value");
   const sbsBtn = getByTestId("sbsBtn");
+  
+  // No less than creo
   fireEvent.click(sbsBtn);
   expect(value.textContent).toBe("0");
 
+  // Increment
   const addBtn = getByTestId("addBtn");
   fireEvent.click(addBtn);
   expect(value.textContent).toBe("1");
+
+  // No more than 99
+  [...Array(100).keys()].forEach(() => fireEvent.click(addBtn));
+  expect(value.textContent).toBe("99");
+
+  // Decrement
+  fireEvent.click(sbsBtn);
+  expect(value.textContent).toBe("98");
 });
-
-
-// fireEvent.change(id, {
-//   target: {
-//     value
-//   }
-// }
