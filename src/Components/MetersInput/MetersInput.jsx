@@ -1,5 +1,5 @@
 import React from "react";
-import { func, number, string, oneOfType, element } from "prop-types";
+import { func, number, string, element } from "prop-types";
 
 import styles from "./MetersInput.module.css";
 
@@ -33,7 +33,7 @@ MetersInput.propTypes = {
   title: string,
   value: number,
   onChange: func,
-  icon: oneOfType([ element, null ]),
+  icon: element,
 };
 
 MetersInput.defaultProps = {

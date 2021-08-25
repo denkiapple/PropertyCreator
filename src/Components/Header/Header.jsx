@@ -1,5 +1,5 @@
 import React from "react";
-import { string, oneOfType, func } from "prop-types";
+import { string, func } from "prop-types";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
@@ -24,7 +24,7 @@ const Header = ({ title, onSearch }) => {
 
 Header.propTypes = {
   title: string,
-  onSearch: oneOfType([func, null]),
+  onSearch: func,
 };
 
 Header.defaultProps = {
