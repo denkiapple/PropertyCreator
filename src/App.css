@@ -10,7 +10,9 @@
   --color-brand: #2aa4d4;
   --color-brand-light: #4fb4db;
   --color-brand-dark: #1e89b3;
-  --gradient-brand: radial-gradient(circle, rgba(30,137,179,1) 15%, rgba(79,180,219,1) 89%);
+
+  --gradient-brand: linear-gradient(170deg, rgba(153,203,223,1) 0%, rgba(80,183,223,1) 13%, rgba(30,137,179,1) 100%);
+  --gradient-brand-radial: radial-gradient(circle, rgba(30,137,179,1) 15%, rgba(79,180,219,1) 89%);
 
   --color-cyan: #54b8b3;
   --color-cyan-light: #7bdbd6;
