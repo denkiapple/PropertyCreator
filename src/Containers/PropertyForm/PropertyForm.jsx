@@ -52,15 +52,20 @@ const PropertyForm = ({ props }) => {
     console.log(values);
   };
 
+  const initialValues = {
+    rooms: 0,
+    bathrooms: 0,
+    parking: 0,
+    lotSize: 0,
+    constructionSize: 0,
+    sharedSize: 0,
+  };
+
   return (
     <Formik
       className={styles.layout}
       onSubmit={handlePropertyCreation}
-      initialValues={{
-        rooms: 0,
-        bathrooms: 0,
-        parking: 0,
-      }}
+      initialValues={initialValues}
     >
       {() => (
         <Form>
@@ -79,32 +84,32 @@ const PropertyForm = ({ props }) => {
             <Grid>
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Zip code</label>
-                <input className={styles.input} type="text" name="zipCode"></input>
+                <Field className={styles.input} type="text" name="zipCode" />
               </div>
   
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Street</label>
-                <input className={styles.input} type="text" name="street"></input>
+                <Field className={styles.input} type="text" name="street" />
               </div>
   
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Number (exterior)</label>
-                <input className={styles.input} type="text" name="extNumber"></input>
+                <Field className={styles.input} type="text" name="extNumber" />
               </div>
   
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Number (interior)</label>
-                <input className={styles.input} type="text" name="intNumber"></input>
+                <Field className={styles.input} type="text" name="intNumber" />
               </div>
   
               <div className={styles.inputContainer}>
                 <label className={styles.label}>City</label>
-                <input className={styles.input} type="text" name="city"></input>
+                <Field className={styles.input} type="text" name="city" />
               </div>
   
               <div className={styles.inputContainer}>
                 <label className={styles.label}>State</label>
-                <input className={styles.input} type="text" name="state"></input>
+                <Field className={styles.input} type="text" name="state" />
               </div>
             </Grid>
           </section>
@@ -132,7 +137,7 @@ const PropertyForm = ({ props }) => {
   
               <div className={styles.inputContainer}>
                 <Field
-                  name="shaeredSize"
+                  name="sharedSize"
                   component={MetersInput}
                   title="Shared spaces"
                   icon={commonIcon}
@@ -159,7 +164,7 @@ const PropertyForm = ({ props }) => {
           </section>
   
           <section>
-            <button className={styles.submitBtn} >
+            <button className={styles.submitBtn} type="submit">
               Create
             </button>
           </section>

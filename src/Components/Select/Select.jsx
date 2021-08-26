@@ -19,7 +19,7 @@ const Select = ({ options, initialSelected, field }) => {
             selected === option.id && styles.optionSelected
           )}
           onClick={() => {
-            const event = { target: { value: option.id } }
+            const event = { target: { value: option.id, name: field?.name } }
             field?.onChange(event);
             setSelected(option.id);
           }}
