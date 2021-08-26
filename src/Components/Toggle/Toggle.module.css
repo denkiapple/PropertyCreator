@@ -26,6 +26,8 @@
   height: 2rem;
   width: 3.5rem;
   cursor: pointer;
+  transform: translateX(0);
+  transition: all 600ms;
 }
 
 .bolis {
@@ -33,4 +35,14 @@
   height: 1.5rem;
   border-radius: 50%;
   background-color: var(--color-brand);
+  transition: all 600ms;
+}
+
+.togglerOn {
+  background-color: var(--color-brand);
+}
+
+.bolisOn {
+  transform: translateX(1.1rem);
+  background-color: var(--color-white);
 }

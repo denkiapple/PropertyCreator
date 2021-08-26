@@ -1,26 +1,34 @@
-import React, { useState } from "react";
-import { string, bool } from "prop-types";
+import React from "react";
+import { string, shape } from "prop-types";
 import { classes } from "../../constants";
 
 import styles from "./Toggle.module.css";
 
-const Toggle = ({ text, initiallyOn }) => {
-  const [selected, setSelected] = useState(initiallyOn);
+const Toggle = ({ text, field }) => {
+  const toggle = () => {
+    const event = { target: { value: !field?.value, name: field.name } };
+    field?.onChange(event);
+  };
 
   return (
     <div className={styles.layout}>
-      <p>
-        {text}
+      <p data-testid="text">
+        {text || field?.name}
       </p>
       
       <button
+        type="button"
         className={classes(
           styles.toggler,
-          selected && styles.optionSelected
+          field?.value && styles.togglerOn
         )}
-        onClick={() => setSelected(!selected)}
+        onClick={toggle}
+        data-testid="button"
       >
-        <div className={styles.bolis}></div>
+        <div className={classes(
+          styles.bolis,
+          field?.value && styles.bolisOn,
+        )}></div>
       </button>
     </div>
   );
@@ -28,12 +36,16 @@ const Toggle = ({ text, initiallyOn }) => {
 
 Toggle.propTypes = {
   text: string,
-  initiallyOn: bool,
+  field: shape({}),
 };
 
 Toggle.defaultProps = {
   text: "Placehoder",
-  initiallyOn: false,
+  field: {
+    name: "",
+    value: 0,
+    onChange: () => {},
+  },
 };
 
 export default Toggle;
