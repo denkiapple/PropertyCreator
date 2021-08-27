@@ -1,12 +1,21 @@
 import React from "react";
-import { func, number, string, element } from "prop-types";
+import { shape, string, element } from "prop-types";
 
 import styles from "./MetersInput.module.css";
 
-const MetersInput = ({ title, value, onChange, icon }) => {
+const MetersInput = ({ title, field, icon, ...props }) => {
+  const handleChange = ({ target: { value } }) => {
+    const numberRgx = new RegExp('([0-9])+');
+
+    if ((numberRgx.test(value) || value === "") && value < 100) {
+      if (+field?.value === 0) return field?.onChange({ target:{ value, name: field?.name }});
+      return field?.onChange({ target:{ value, name: field?.name }});
+    }
+  };
+
   return (
     <div className={styles.layout}>
-      <p className={styles.title}>
+      <p className={styles.title} data-testid="title">
         {title}
       </p>
 
@@ -14,8 +23,10 @@ const MetersInput = ({ title, value, onChange, icon }) => {
         <input
           className={styles.value}
           type="number"
-          value={value}
-          onChange={onChange}
+          value={field?.value || ""}
+          onChange={e => handleChange(e)}
+          data-testid="input"
+          {...props}
         />
         <span className={styles.meters}>mts<sup>2</sup></span>
       </div>
@@ -31,15 +42,17 @@ const MetersInput = ({ title, value, onChange, icon }) => {
 
 MetersInput.propTypes = {
   title: string,
-  value: number,
-  onChange: func,
+  field: shape({}),
   icon: element,
 };
 
 MetersInput.defaultProps = {
   title: "Meters Input",
-  value: 0,
-  onChange: () => {},
+  field: {
+    name: "",
+    value: 0,
+    onChange: () => {},
+  },
   icon: null,
 };
 
