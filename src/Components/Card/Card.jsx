@@ -10,6 +10,7 @@ import {
   faToilet,
   faBed,
   faCarSide,
+  faRuler,
 } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -39,11 +40,32 @@ const Card = ({ property }) => {
   const propertyIcon = () => {
     switch(type) {
       case 1:
-        return <FontAwesomeIcon icon={faBuilding} className={styles.searchIcon} />;
+        return (
+          <div>
+            <FontAwesomeIcon icon={faBuilding} className={styles.searchIcon} />
+            <span className={styles.info}>
+              Apartment
+            </span>
+          </div>
+        );
       case 2:
-        return <FontAwesomeIcon icon={faHome} className={styles.searchIcon} />;
+        return (
+          <div>
+            <FontAwesomeIcon icon={faHome} className={styles.searchIcon} />
+            <span className={styles.info}>
+              House
+            </span>
+          </div>
+        );
       default:
-        return <FontAwesomeIcon icon={faCity} className={styles.searchIcon} />;
+        return (
+          <div>
+            <FontAwesomeIcon icon={faCity} className={styles.searchIcon} />
+            <span className={styles.info}>
+              Development
+            </span>
+          </div>
+        );
     }
   };
 
@@ -58,7 +80,10 @@ const Card = ({ property }) => {
           {propertyIcon()}
         </div>
         <div>
-          {constructionSize}mt<sup>2</sup>
+          <FontAwesomeIcon icon={faRuler} className={styles.searchIcon} />
+          <span className={styles.info}>
+            {constructionSize}mt<sup>2</sup>
+          </span>
         </div>
       </div>
 
