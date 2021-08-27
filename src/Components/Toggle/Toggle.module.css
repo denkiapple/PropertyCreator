@@ -43,6 +43,6 @@
 }
 
 .bolisOn {
-  transform: translateX(1.1rem);
+  transform: translateX(1.3rem);
   background-color: var(--color-white);
 }

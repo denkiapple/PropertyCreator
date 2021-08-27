@@ -1,5 +1,6 @@
 import React from "react";
 import { shape, string } from "prop-types";
+import { classes } from "../../constants";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -30,7 +31,15 @@ const NumberInput = ({ title, field }) => {
       </p>
 
       <div className={styles.container}>
-        <button className={styles.leftBtn} onClick={decrement} data-testid="sbsBtn" type="button">
+        <button
+          className={classes(
+            styles.leftBtn,
+            field?.value < 1 && styles.disabledBtn,
+          )}
+          onClick={decrement}
+          data-testid="sbsBtn"
+          type="button"
+        >
           <FontAwesomeIcon icon={faMinus} className={styles.navIcon} />
         </button>
 
@@ -38,7 +47,15 @@ const NumberInput = ({ title, field }) => {
           {field?.value}
         </span>
 
-        <button className={styles.rightBtn} onClick={increment} data-testid="addBtn" type="button">
+        <button
+          className={classes(
+            styles.rightBtn,
+            field?.value > 98 && styles.disabledBtn,
+          )}
+          onClick={increment}
+          data-testid="addBtn"
+          type="button"
+        >
           <FontAwesomeIcon icon={faPlus} className={styles.navIcon} />
         </button>
       </div>

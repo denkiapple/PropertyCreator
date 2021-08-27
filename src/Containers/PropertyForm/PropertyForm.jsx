@@ -56,9 +56,6 @@ const PropertyForm = ({ props }) => {
     rooms: 0,
     bathrooms: 0,
     parking: 0,
-    lotSize: 0,
-    constructionSize: 0,
-    sharedSize: 0,
   };
 
   return (
@@ -123,6 +120,7 @@ const PropertyForm = ({ props }) => {
                   component={MetersInput}
                   title="Lot size"
                   icon={lotIcon}
+                  placeholder={0}
                 />
               </div>
   
@@ -132,6 +130,7 @@ const PropertyForm = ({ props }) => {
                   component={MetersInput}
                   title="Construction size"
                   icon={buildIcon}
+                  placeholder={0}
                 />
               </div>
   
@@ -141,6 +140,7 @@ const PropertyForm = ({ props }) => {
                   component={MetersInput}
                   title="Shared spaces"
                   icon={commonIcon}
+                  placeholder={0}
                 />
               </div>
             </Grid>
