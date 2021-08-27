@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faPlus,
   faHome,
-  faTachometerAlt,
   faInfoCircle,
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -17,14 +16,14 @@ const Navigation = ({ props }) => {
   return (
     <div className={styles.layout}>
       <NavLink
-        to="/dashboard"
+        to="/properties"
         className={styles.navLink}
         activeClassName={styles.navActive}
       >
         <span className={styles.navLabel}>
-          Dashboard
+          Properties
         </span>
-        <FontAwesomeIcon icon={faTachometerAlt} className={styles.navIcon} />
+        <FontAwesomeIcon icon={faHome} className={styles.navIcon} />
       </NavLink>
 
       <NavLink
@@ -36,17 +35,6 @@ const Navigation = ({ props }) => {
           Add
         </span>
         <FontAwesomeIcon icon={faPlus} className={styles.navIcon} />
-      </NavLink>
-
-      <NavLink
-        to="/properties"
-        className={styles.navLink}
-        activeClassName={styles.navActive}
-      >
-        <span className={styles.navLabel}>
-          Properties
-        </span>
-        <FontAwesomeIcon icon={faHome} className={styles.navIcon} />
       </NavLink>
 
       <NavLink

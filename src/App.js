@@ -3,7 +3,6 @@ import { Navigation } from "./Components";
 import {
   About,
   AddPropertyContainer,
-  Dashboard,
   PropertiesContainer,
 } from "./Containers";
 
@@ -11,6 +10,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 
 import './App.css';
@@ -20,18 +20,16 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/dashboard" render={() => (
-            <Dashboard />
+          <Route path="/properties" render={() => (
+            <PropertiesContainer />
           )} />
           <Route path="/addproperty" render={() => (
             <AddPropertyContainer />
           )} />
-          <Route path="/properties" render={() => (
-            <PropertiesContainer />
-          )} />
           <Route path="/about" render={() => (
             <About />
           )} />
+          <Redirect to="/properties" />
         </Switch>
 
         <Navigation />
