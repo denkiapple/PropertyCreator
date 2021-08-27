@@ -24,7 +24,7 @@ import { PROPERTY_TYPES } from "../../constants";
 
 import styles from "./PropertyForm.module.css";
 
-const PropertyForm = ({ props }) => {
+const PropertyForm = () => {
   const lotIcon = <FontAwesomeIcon icon={faTree} className={styles.navIcon} />;
   const commonIcon = <FontAwesomeIcon icon={faSwimmingPool} className={styles.navIcon} />;
   const buildIcon = <FontAwesomeIcon icon={faBuilding} className={styles.navIcon} />;

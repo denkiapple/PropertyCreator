@@ -47,10 +47,10 @@ section h3 {
   font-size: 1.8rem;
 
   color: var(--color-white);
-  background-color: var(--color-brand);
+  background-color: var(--color-green);
   cursor: pointer;
 }
 
 .submitBtn:hover {
-  background-color: var(--color-brand-dark);
+  background-color: var(--color-green-dark);
 }
