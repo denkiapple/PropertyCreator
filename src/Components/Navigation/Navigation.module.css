@@ -6,6 +6,7 @@
   
   margin: 0;
   padding: 0.5rem;
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -66,5 +67,15 @@
 
   .navLabel {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .layout {
+    top: 0;
+    width: 17rem;
+    right: auto;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }

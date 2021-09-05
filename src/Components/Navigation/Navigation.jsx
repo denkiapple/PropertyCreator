@@ -5,14 +5,13 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faPlus,
   faHome,
   faInfoCircle,
 } from '@fortawesome/free-solid-svg-icons'
 
 import styles from "./Navigation.module.css";
 
-const Navigation = ({ props }) => {
+const Navigation = () => {
   return (
     <div className={styles.layout}>
       <NavLink
@@ -24,17 +23,6 @@ const Navigation = ({ props }) => {
           Properties
         </span>
         <FontAwesomeIcon icon={faHome} className={styles.navIcon} />
-      </NavLink>
-
-      <NavLink
-        to="/addproperty"
-        className={styles.navLink}
-        activeClassName={styles.navActive}
-      >
-        <span className={styles.navLabel}>
-          Add
-        </span>
-        <FontAwesomeIcon icon={faPlus} className={styles.navIcon} />
       </NavLink>
 
       <NavLink
