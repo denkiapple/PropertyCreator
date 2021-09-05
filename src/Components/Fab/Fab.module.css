@@ -1,0 +1,32 @@
+.layout {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+
+  margin-right: 2rem;
+  margin-bottom: 6rem;
+  z-index: 15;
+
+  background-color: var(--color-brand);
+  color: var(--color-white);
+  border: none;
+  font-size: 2rem;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 600ms;
+}
+
+.layout:hover {
+  background-color: var(--color-brand-dark);
+}
+
+@media only screen and (min-width: 1200px) {
+  .layout {
+    margin-bottom: 2rem;
+  }
+}
