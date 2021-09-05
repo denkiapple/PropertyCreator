@@ -1,5 +1,15 @@
 import React from "react";
-import { Header, EmptyList, Card, Grid } from "../Components";
+import {
+  Header,
+  Fab,
+  EmptyList,
+  Card,
+  Grid,
+} from "../Components";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
 import { properties } from "../constants";
 
 const PropertiesContainer = () => {
@@ -12,6 +22,8 @@ const PropertiesContainer = () => {
     />
   ));
 
+  const addIcon = <FontAwesomeIcon icon={faPlus} />;
+
   return (
     <main>
       <Header title="Properties" onSearch={handleSearch} />
@@ -22,6 +34,7 @@ const PropertiesContainer = () => {
       ) : (
         <EmptyList message="You have no properties, ¡try adding some!" />
       )}
+      <Fab icon={addIcon} />
     </main>
     );
 };
