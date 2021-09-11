@@ -51,7 +51,7 @@
 }
 
 .disabledBtn, .disabledBtn:hover {
-  background-color: var(--color-white-obscure);
+  background-color: var(--color-white-transparent);
   color: var(--color-brand-light);
   cursor: not-allowed;
 }
