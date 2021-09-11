@@ -1,20 +1,31 @@
 import React from "react";
-import { Header } from "../Components";
+import { withRouter } from "react-router";
+import { shape } from "prop-types";
+
+import { ModalBlur } from "../Components";
 import PropertyForm from "./PropertyForm/PropertyForm";
 
-const AddPropertyContainer = () => {
+const AddPropertyContainer = ({ history }) => {
+  const handleClose = () => {
+    history.replace("/");
+  };
+
   return (
-    <>
-      <Header title="Add Property" />
+    <ModalBlur
+      title="Add Property"
+      closeLabel="Cancel"
+      onClose={handleClose}
+    >
       <PropertyForm />
-    </>
+    </ModalBlur>
   );
 };
 
 AddPropertyContainer.propTypes = {
+  history: shape({}).isRequired,
 };
 
 AddPropertyContainer.defaultProps = {
 };
 
-export default AddPropertyContainer;
+export default withRouter(AddPropertyContainer);

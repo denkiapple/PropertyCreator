@@ -1,5 +1,5 @@
 import React from "react";
-import { ModalBlur , Navigation} from "./Components";
+import { Navigation} from "./Components";
 import {
   AddPropertyContainer,
   PropertiesContainer,
@@ -12,17 +12,21 @@ import {
 
 import './App.css';
 
+// TODO:
+// - confirm on close ModalBlur
+// - click card to open detail view
+// - implement searchbar on Navbar
+// - 
+
 function App() {
   return (
     <div className="App">
       <Router>
-        <Route path="/properties" render={() => (
+        <Route path="/" render={() => (
           <PropertiesContainer />
         )} />
-        <Route path="/properties/add" render={() => (
-          <ModalBlur>
-            <AddPropertyContainer />
-          </ModalBlur>
+        <Route path="/add" render={() => (
+          <AddPropertyContainer />
         )} />
         <Navigation />
       </Router>

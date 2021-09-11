@@ -14,7 +14,11 @@ const Header = ({ title, onSearch }) => {
       </h1>
       {onSearch && (
         <div className={styles.inputContainer}>
-          <input className={styles.input} type="text" />
+          <input
+            className={styles.input}
+            type="text"
+            placeholder="Search..."
+          />
           <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
         </div>
       )}

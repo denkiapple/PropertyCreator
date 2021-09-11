@@ -1,4 +1,7 @@
 import React from "react";
+import { withRouter } from "react-router";
+import { shape } from "prop-types"
+
 import {
   Header,
   Fab,
@@ -12,7 +15,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 import { properties } from "../constants";
 
-const PropertiesContainer = () => {
+const PropertiesContainer = ({ history }) => {
   const handleSearch = () => {};
 
   const list = properties.map(property => (
@@ -23,6 +26,7 @@ const PropertiesContainer = () => {
   ));
 
   const addIcon = <FontAwesomeIcon icon={faPlus} />;
+  const handleAdd = () => history.push("/add");
 
   return (
     <main>
@@ -34,9 +38,13 @@ const PropertiesContainer = () => {
       ) : (
         <EmptyList message="You have no properties, ¡try adding some!" />
       )}
-      <Fab icon={addIcon} />
+      <Fab icon={addIcon} onClick={handleAdd} />
     </main>
     );
 };
 
-export default PropertiesContainer;
+PropertiesContainer.propTypes = {
+  history: shape({}).isRequired,
+};
+
+export default withRouter(PropertiesContainer);
