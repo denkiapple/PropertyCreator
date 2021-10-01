@@ -3,7 +3,7 @@ import { oneOfType, arrayOf, element, func, string } from "prop-types";
 
 import styles from "./ModalBlur.module.css";
 
-const ModalBlur = ({ title, closeLabel, children, onClose }) => {
+const ModalBlur = ({ title, closeLabel, actions, children, onClose }) => {
   const wrapperRef = useRef(null);
   useEffect(() => {
     // Alert if clicked on outside of element
@@ -32,7 +32,17 @@ const ModalBlur = ({ title, closeLabel, children, onClose }) => {
         <div className={styles.layout} ref={wrapperRef}>
           <header className={styles.header}>
             <h2>{title}</h2>
-            <button type="button" onClick={handleClose}>{closeLabel}</button>
+
+            <div>
+              {actions}
+              <button
+                type="button"
+                onClick={handleClose}
+                className={styles.closeBtn}
+              >
+                {closeLabel}
+              </button>
+            </div>
           </header>
 
           <div className={styles.content}>

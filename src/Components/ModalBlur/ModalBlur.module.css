@@ -32,7 +32,7 @@
   padding: 0.5rem 1.5rem;
 }
 
-.header > button {
+.closeBtn {
   border: none;
   margin: 0;
   font-size: 1rem;
@@ -43,7 +43,7 @@
   color: var(--color-brand);
 }
 
-.header > button:hover {
+.closeBtn:hover {
   color: var(--color-brand-dark);
   background-color: var(--color-white-very-dark);
 }
